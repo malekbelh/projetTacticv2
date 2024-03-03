@@ -7,25 +7,23 @@ function NavbarHome() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="https://tac-tic.net/"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
+            className="flex items-center space-x-1 rtl:space-x-reverse"
           >
             <img src="/logo2.png" className="h-12" alt="TacTicFlowLogo" />
-            <span
-              className="self-center text-2xl font-semibold whitespace-nowrap "
-              style={{ letterSpacing: "5px" }}
-            >
-              actiwFlow
-            </span>
+            <h3 className="mt-1 relative text-[#212177] text-2xl  tracking-[0.16em] font-bold font-inherit whitespace-nowrap z-[3]">
+              acticFlow
+            </h3>
           </a>
           <div class="flex md:order-2 text-[#212177]  space-x-3 md:space-x-0 rtl:space-x-reverse">
             <Link to="/login">
               <button
                 type="button"
-                class="text-white  bg-[#212177] hover:bg-[#FFC107] hover:font-bold  hover:text-[#212177]   font-medium rounded-lg text-sm px-4 py-2 text-center  "
+                className="text-white bg-[#212177] transition-transform transform hover:scale-105  hover:font-bold font-medium rounded-xl text-sm px-4 py-2 text-center"
               >
                 Login
               </button>
             </Link>
+
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"

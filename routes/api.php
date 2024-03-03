@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\AuthController;
-
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,7 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-       
+    Route::get('/users', [UserController::class, 'index']);
+    Route::delete('/users/{user}', [UserController::class, 'destroy']); // Ajout de la route pour supprimer un utilisateur
    });
 
 
@@ -41,3 +43,4 @@ Route::post('/loginwithgoogle', [AuthController::class, 'handleGoogleCallback'])
 
 Route::post('/passwordreset', [AuthController::class, 'passwordReset']);
 Route::post('/newpassword', [AuthController::class, 'newPassword']);
+Route::post('/send-email', [App\Http\Controllers\MailController::class, 'sendEmail']);
